@@ -9,7 +9,7 @@ enlaces.forEach(enlaces => {
 
 
  // 2.1 Al hacer click
- // Imagen
+ // Imagen Click
  const imagenesUno = document.querySelectorAll("img");
  imagenesUno.forEach(function(imagen) {
      imagen.addEventListener('click', function() {
@@ -17,7 +17,7 @@ enlaces.forEach(enlaces => {
  });
 });
 
-// Texto
+// Texto Click
 
 document.addEventListener('DOMContentLoaded', function() {
     // Selecciona todos los elementos <p>
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Section
+// Bloque Section Click
 
 document.addEventListener('DOMContentLoaded', function() {
     // Selecciona todos los elementos <section>
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
  // 3.1 Al hacer Over
-// Imagenes
+// Imagenes Over
  let selectorImagenes = document.querySelectorAll("main > article:nth-child(2) img");
     // establecemos un atributo dataset.imgOriginal a todas las imagenes con su imagen actual
     for(let i=0; i < selectorImagenes.length; i++){
@@ -67,4 +67,39 @@ document.addEventListener('DOMContentLoaded', function() {
             this.setAttribute('src', selectorImagenes[i].dataset.imgOriginal);
         });
     }
+//Texto Over
+// Selecciona todos los párrafos <p>
+const parrafos = document.querySelectorAll('p');
 
+// Añade el evento 'mouseover' para cada párrafo
+parrafos.forEach((parrafo) => {
+    parrafo.addEventListener('mouseover', () => {
+        // Cambia el color del texto a blanco y el fondo a rosa
+        parrafo.style.color = 'white';
+        parrafo.style.backgroundColor = 'pink';
+    });
+
+    // Opcional: restaura el color original cuando el ratón salga del párrafo
+    parrafo.addEventListener('mouseout', () => {
+        parrafo.style.color = ''; // Vuelve al color original
+        parrafo.style.backgroundColor = ''; // Vuelve al fondo original
+    });
+});
+
+// Bloque Article over
+
+// Selecciona todos los artículos <article>
+const articulos = document.querySelectorAll('article');
+
+// Añade el evento 'mouseover' para cada artículo
+articulos.forEach((articulo) => {
+    articulo.addEventListener('mouseover', () => {
+        // Cambia el color de fondo a gris
+        articulo.style.backgroundColor = 'gray';
+    });
+
+    // Restaura el color original cuando el ratón sale del artículo
+    articulo.addEventListener('mouseout', () => {
+        articulo.style.backgroundColor = ''; // Vuelve al fondo original
+    });
+});
